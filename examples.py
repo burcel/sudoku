@@ -83,3 +83,11 @@ class Examples:
         [0, 0, 0, 0, 0, 0, 0, 4, 0],
     ]
 
+
+class Solutions:
+    EASIEST_1 = []
+    EASIEST_2 = []
+    INTERMEDIATE = []
+    DIFFICULT_1 = []
+    DIFFICULT_2 = []
+    NOT_FUN = []

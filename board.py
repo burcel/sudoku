@@ -4,7 +4,18 @@ from typing import List, Tuple
 class Board:
     def __init__(self, board):
         self._board = board
-        self.extract_empty_cells()
+
+    def set_value(self, row: int, column: int, value: int) -> None:
+        """
+        Set given value in board with respect to rox x column position
+        """
+        self._board[row][column] = value
+
+    def get_value(self, row: int, column: int) -> int:
+        """
+        Return given value in board with respect to rox x column position
+        """
+        return self._board[row][column]
 
     def extract_empty_cells(self) -> List[Tuple[int, int]]:
         """
@@ -48,16 +59,3 @@ class Board:
             for j in range(9):
                 line_str += " {} |".format(" " if self._board[i][j] == 0 else self._board[i][j])
             print(line_str)
-
-    def set_value(self, row: int, column: int, value: int) -> None:
-        """
-        Set given value in board with respect to rox x column position
-        """
-        self._board[row][column] = value
-
-    def increment_value(self, row: int, column: int) -> None:
-        """
-        Increment value in row x column position
-        """
-        self._board[row][column] += 1
-

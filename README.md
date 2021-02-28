@@ -8,12 +8,14 @@ Python code for solving sudoku puzzle using backtracking
 
 ## TODO
 
+- Solved step count
 - Unit test
+    - Solve individual case
 - Examples
-    - Easiest: 0 / 2
-    - Intermediate: 0 / 1
-    - Difficult: 0 / 2
-    - Not fun: 0 / 1
+    - Easiest: 2 / 2
+    - Intermediate: 1 / 1
+    - Difficult: 2 / 2
+    - Not fun: 1 / 1
     - Unsolvable: 0 / 11
     
 

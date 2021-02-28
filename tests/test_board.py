@@ -35,3 +35,7 @@ class TestBoard:
         """
         board = Board(example_board)
         assert validity == board.is_board_valid(row, column, value)
+
+    def test_solve(self):
+        # TODO
+        pass
