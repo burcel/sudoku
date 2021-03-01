@@ -9,10 +9,10 @@ class Sudoku:
         pass
 
     @staticmethod
-    def solve():
-        start = datetime.utcnow()
-
-        board = Board(Examples.NOT_FUN)
+    def solve(board: Board) -> None:
+        """
+        Solve given board and update it with the result
+        """
         empty_cell_list = board.extract_empty_cells()
         print("Empty cell count: {}".format(len(empty_cell_list)))
 
@@ -54,16 +54,18 @@ class Sudoku:
             # board.print_board()
             # input("?")
 
-        board.print_board()
-
-        # Calculate time interval
-        end = datetime.utcnow()
-        seconds = (end - start).total_seconds()
-        print("Passed time: {:.3f} seconds".format(seconds))
-
 
 def main() -> None:
-    Sudoku.solve()
+    start = datetime.utcnow()
+
+    board = Board(Examples.NOT_FUN)
+    Sudoku.solve(board)
+    board.print_board()
+
+    # Calculate time interval
+    end = datetime.utcnow()
+    seconds = (end - start).total_seconds()
+    print("Passed time: {:.3f} seconds".format(seconds))
 
 
 if __name__ == "__main__":

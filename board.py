@@ -59,3 +59,9 @@ class Board:
             for j in range(9):
                 line_str += " {} |".format(" " if self._board[i][j] == 0 else self._board[i][j])
             print(line_str)
+
+    def compare_boards(self, board: List[List[int]]) -> bool:
+        """
+        Compare board with the given board and return boolean
+        """
+        return self._board == board
