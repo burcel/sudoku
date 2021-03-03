@@ -1,6 +1,5 @@
 from board import Board
-from examples import Examples, Solutions
-from sudoku import Sudoku
+from examples import Examples
 from typing import List
 import pytest
 
@@ -36,18 +35,3 @@ class TestBoard:
         """
         board = Board(example_board)
         assert validity == board.is_board_valid(row, column, value)
-
-    @pytest.mark.parametrize(
-        "example_board, solution_board",
-        [
-            (Examples.EASIEST_1, Solutions.EASIEST_1), (Examples.EASIEST_2, Solutions.EASIEST_2), (Examples.INTERMEDIATE, Solutions.INTERMEDIATE),
-            (Examples.DIFFICULT_1, Solutions.DIFFICULT_1), (Examples.DIFFICULT_2, Solutions.DIFFICULT_2), (Examples.NOT_FUN, Solutions.NOT_FUN)
-        ]
-    )
-    def test_solve(self, example_board: List[List[int]], solution_board: List[List[int]]) -> None:
-        """
-        Testing solution
-        """
-        board = Board(example_board)
-        Sudoku.solve(board)
-        assert board.compare_boards(solution_board)
